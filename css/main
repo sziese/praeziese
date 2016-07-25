@@ -1,0 +1,207 @@
+/* Mit box-sizing verhindert man, dass padding auf die bestehnde Breite einer Box addiert wird. Das bedeutet, eine Box, die 100px breit ist und 20px padding an jeder Seite erhält, bleibt 100px breit und wird nicht 140px breit.  */
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Hier wird der Apple System Font verwendet. */
+  background: beige;
+}
+
+/* Angaben zum genrellen Layout */
+
+.wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto; /* margin-left: auto + margin-right: auto zentriert eine Box, deren display property static oder block ist. */
+  margin-right: auto;
+  background: #fff;
+  border-top: 10px solid purple;
+}
+
+.row {
+  display: inline-block;
+  width: 100%;
+  padding: 1em;
+}
+
+/* Ab einer Mindestbreite von 720px verändern (erhöhen) wir das padding der row. */
+
+@media only screen and (min-width: 720px) {
+  .row {
+    padding: 1.5em 4em;
+  }
+}
+
+/* Angaben zum Logo */
+
+.logo {
+  display: inline-block;
+  width: auto;
+  color: purple;
+  margin-bottom: 2em;
+}
+
+/* Angaben zur Navigation */
+
+.main-nav,
+.main-nav__list {
+  width: 100%;
+}
+
+.main-nav__list {
+  padding: 0;
+  margin: 0;
+  border-bottom: 3px solid purple;
+}
+
+.main-nav__list__item {
+  list-style: none; /* Das list__item soll keine Listenpunkte erhalten. */
+}
+
+/* Ab einer Mindestbreite von 720px soll das list__item ein inline-block Element sein. */
+
+@media only screen and (min-width: 720px) {
+  .main-nav__list__item {
+    display: inline-block;
+  }
+}
+
+.main-nav__list__item a {
+  display: inline-block;
+  width: 100%;
+  padding: 1em;
+  text-decoration: none; /* Links sollen nicht unterstrichen sein. */
+  color: purple;
+}
+
+/* Bei Mouseover oder mit active-Klasse ist der Button der Navigation purple hinterlegt und die Textfarbe weiß.  */
+
+.main-nav__list__item a:hover,
+.main-nav__list__item a.active {
+  background: purple;
+  color: white;
+}
+
+/* Angaben zum Artikel */
+
+/* Ab einer Mindestbreite von 720px erhöhen wir die Font-Size. */
+
+@media only screen and (min-width: 720px) {
+  .article h1 {
+    font-size: 2.25rem;
+  }
+
+  .article p {
+    font-size: 1.125rem;
+  }
+}
+
+.article p {
+  line-height: 1.5;
+}
+
+.article a {
+  color: purple;
+}
+
+.article a:hover {
+  text-decoration: none;
+}
+
+.article__body {
+  width: 100%;
+  max-width: 750px;
+}
+
+/* Angaben zu den Projekten */
+
+.projects__list {
+  display: block;
+  width: 100%;
+  margin: 0 -0.5em 0 -0.5em; /* Hier verwenden wir einen negativen Margin von -0.5em, um die projects__list an der Überschrift auszurichten. */
+  padding: 0;
+}
+
+/* Ab einer Mindestbreite von 720px vergeben wir für die projects__list die flex-Eigenschaft, damit die list__items nebeneinander statt untereinander stehen. */
+
+@media only screen and (min-width: 720px) {
+  .projects__list {
+    display: flex;
+  }
+}
+
+
+.projects__list__item {
+  width: 100%;
+  margin: 0.5em;
+  list-style: none;
+  border: 2px solid purple;
+  text-align: center;
+}
+
+@media only screen and (min-width: 720px) {
+  .projects__list__item {
+    width: calc(25% - 0.5em); /* Die CSS3-Calc-Funktion bewirkt, dass wir em, px oder rem-Werte mit Prozentwerden verrechnen können. Addition und Subtraktion wird hier häufig angewendet, um wie hier in diesem Beispiel jedem Item eine Breite von 25% geben zu können - minus dem Außenabstand von 0.5em. */
+  }
+}
+
+
+.projects__list__item a {
+  display: block;
+  padding: 4em;
+  color: purple;
+  text-decoration: none;
+}
+
+.projects__list__item a:hover {
+  background: purple;
+  color: white;
+}
+
+/* Buttons */
+
+a.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: purple;
+  color: white;
+  text-decoration: none;
+  border: 2px solid purple;
+}
+
+a.button:hover {
+  background: white;
+  color: purple;
+}
+
+/* Slideshow */
+
+.slideshow img {
+  display: block;
+  width: 100%;
+}
+
+.carousel-cell {
+  width: 100%;
+}
+
+
+/* Media Queries können am Ende eines CSS-Files stehen, oder aber auch dazwischen. Die Position ist egal. Hauptsache, es kann leicht nachvollzogen werden, was im Code passiert. */
+
+/* Was passiert ab 720px */
+
+@media only screen and (min-width: 720px) {
+  ...
+}
+
+/* Was passiert ab 980px */
+
+@media only screen and (min-width: 980px) {
+  ...
+}

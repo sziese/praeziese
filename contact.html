@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>præziese kommunikationsdesign</title>
+<link rel="stylesheet" href="css/flickity.css" media="screen">
+<link rel="stylesheet" href="css/stylesheet.css" media="screen">
+<script src="https://npmcdn.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <header class="header row">
+      <div class="logo">
+      <a href="index.html" class="active"><img src="image/praeziese_logo.svg"></a>
+      </div>
+
+      <nav class="main-nav">
+        <ul class="main-nav__list">
+          <li class="main-nav__list__item"><a href="index.html" class="active">Start</a></li>
+          <li class="main-nav__list__item"><a href="about.html">About</a></li>
+          <li class="main-nav__list__item"><a href="work.html">Work</a></li>
+          <li class="main-nav__list__item"><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+        <main class="content row">
+        <div class="map">  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2427.6381727249372!2d13.349608115655117!3d52.521886879814616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851a6ad4719ab%3A0xae5eae2c93e62488!2sCalvinstra%C3%9Fe+23%2C+10557+Berlin!5e0!3m2!1sde!2sde!4v1468956784119" width="350" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>  <br>
+
+            <p>præziese <br>
+              Kommunikationsdesign <br><br>
+              Saskia Ziese<br><br>
+              <a class="link" href="mailto:info@praeziese.de">info@praeziese.de</a><br><br>
+              Telefon: 0176 211 29 606<br><br>
+
+            Postanschrift: Calvinstraße 23 - 10557 Berlin<br><br></p>
+          <form> <!--action="mail-senden.php" method="post" -->
+            <table><p>
+              <tr><td>Anrede:</td><td>
+
+              <input type="radio" name="anrede" value="Herr">&nbsp;Herr&nbsp</span>
+              <input type="radio" name="anrede" value="Frau">&nbsp;Frau</td></tr>
+
+                <tr><td>Name:</td><td>
+                <input name="name" type="text" size="52" maxlength="52" value=""></td></tr>
+
+                <tr><td>Telefon:</td><td><input name="telefon" type="text" size="52" maxlength="52" value=""></td></tr>
+                <tr><td>E-Mail:</td><td><input id="email" name="email" type="text" size="52" maxlength="52" value=""></td></tr>
+                <tr><td>Betreff:</td><td><input name="betreff" type="text" size="52" maxlength="52" value=""></td></tr>
+
+                <tr><td style="vertical-align:top;">Nachricht:</td>
+                  <td><textarea name="nachricht" cols="50" rows="10" onkeyup="return maxlen(this);"></textarea><br>
+                 <small><span id="out">&nbsp;</span></small></td></tr>
+
+                <tr><td colspan="20" size="52" style="text-align:right;"><input type="submit" value="senden"></td></tr> <!--onmousedown="check();"-->
+              </table>
+          </form>
+          <h4> Impressum</h4>
+        <p>
+          Saskia Ziese<br>
+          præziese Kommunikationsdesign <br>
+          Postanschrift: Calvinstraße 23 - 10557 Berlin<br><br>
+          E-Mail:   <a class="link" href="mailto:info@praeziese.de">info@praeziese.de</a><br>
+          Domain:  <a class="link" href="http://www.praeziese.de">www.praeziese.de</a><br>
+          Telefon: 0176 211 29 606<br><br>
+          Steuernummer: 34/606/51441
+        </p></main>
+
+
+</body>

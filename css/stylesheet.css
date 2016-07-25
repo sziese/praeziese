@@ -1,0 +1,297 @@
+/* Mit box-sizing verhindert man, dass padding auf die bestehnde Breite einer Box addiert wird. Das bedeutet, eine Box, die 100px breit ist und 20px padding an jeder Seite erhält, bleibt 100px breit und wird nicht 140px breit.  */
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  @import url(http://fonts.googleapis.com/css?family=Roboto);
+  background: white;
+}
+
+.box_contact {
+  width: auto;
+}
+
+form {
+  background-color: #fff;
+  width: 450px;
+  padding: 0px;
+  display: block;
+}
+
+table {
+  line-height: 0.9em;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: #000;
+  font-size: 12px;
+}
+td {
+  padding: 5px 0;
+  height: 22px;
+
+}
+tr {
+}
+textarea {
+  max-width: 370px;
+}
+/* Angaben zum genrellen Layout */
+
+.wrapper {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto; /* margin-left: auto + margin-right: auto zentriert eine Box, deren display property static oder block ist. */
+  margin-right: auto;
+  background: #fff;
+  border-top: 0px solid grey;
+}
+
+.row {
+  display: inline-block;
+  width: 100%;
+  padding: 1em;
+}
+
+.map {
+    float: none;
+  }
+
+@media only screen and (min-width: 720px) {
+
+.smaller {
+  font-size: 0.8em;
+}
+.map {
+  float: right;
+  padding-top:2em;
+}
+
+}
+p {
+  font-size: 88%;
+}
+h2 {
+  font-size: 1em;
+}
+h3 {
+  font-size: 0.95em;
+  margin-bottom:-0.7em;
+}
+h4 {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+}
+}
+/* Ab einer Mindestbreite von 720px verändern (erhöhen) wir das padding der row. */
+
+@media only screen and (min-width: 720px) {
+  .row {
+    padding: 1.5em 4em;
+  }
+}
+
+/* Angaben zum Logo */
+
+.logo {
+  display: inline-block;
+  width: 33%;
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
+@media only screen and (min-width: 720px) {
+  .logo {
+    display: inline-block;
+    width: 22%;
+    margin-bottom: 2em;
+    margin-top: 1em;
+  }
+}
+
+/* Angaben zur Navigation */
+
+.main-nav,
+.main-nav__list {
+  width: 100%;
+}
+
+.main-nav__list {
+  padding: 0;
+  margin: 0;
+  border-bottom: 3px solid black;
+}
+
+.main-nav__list__item {
+  list-style: none; /* Das list__item soll keine Listenpunkte erhalten. */
+}
+
+/* Ab einer Mindestbreite von 720px soll das list__item ein inline-block Element sein. */
+
+@media only screen and (min-width: 720px) {
+  .main-nav__list__item {
+    display: inline-block;
+  }
+}
+
+.main-nav__list__item a {
+  display: inline-block;
+  width: 100%;
+  padding: 1em;
+  text-decoration: none; /* Links sollen nicht unterstrichen sein. */
+  color: black;
+}
+
+/* Bei Mouseover oder mit active-Klasse ist der Button der Navigation purple hinterlegt und die Textfarbe weiß.  */
+
+.main-nav__list__item a:hover,
+.main-nav__list__item a.active {
+  background: black;
+  color: white;
+}
+
+/* Angaben zum Artikel */
+
+/* Ab einer Mindestbreite von 720px erhöhen wir die Font-Size. */
+
+@media only screen and (min-width: 720px) {
+  .article h1 {
+    font-size: 2.25rem;
+  }
+
+  .article p {
+    font-size: 1.125rem;
+  }
+}
+
+.article p {
+  line-height: 1.5;
+}
+
+.article a {
+  color: black;
+}
+
+.article a:hover {
+  text-decoration: none;
+}
+
+.article__body {
+  width: 100%;
+  max-width: 750px;
+}
+
+/* Angaben zu den Projekten */
+
+.projects__list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 -0.5em 0 -0em; /* Hier verwenden wir einen negativen Margin von -0.5em, um die projects__list an der Überschrift auszurichten. */
+  padding: 0;
+  justify-content: left;
+
+
+
+}
+
+.project-list__item img {
+	max-width: 400px;
+	max-height: 270px;
+  padding-right: 20px;
+}
+/* Ab einer Mindestbreite von 720px vergeben wir für die projects__list die flex-Eigenschaft, damit die list__items nebeneinander statt untereinander stehen. */
+
+@media only screen and (min-width: 720px) {
+  .projects__list {
+    display: flex;
+  }
+}
+
+
+.projects__list__item {
+  width: 100%;
+  margin: 0.5em;
+  list-style: none;
+  border: 2px solid black;
+  text-align: center;
+}
+
+@media only screen and (min-width: 720px) {
+  .projects__list__item {
+    width: calc(25% - 0.5em); /* Die CSS3-Calc-Funktion bewirkt, dass wir em, px oder rem-Werte mit Prozentwerden verrechnen können. Addition und Subtraktion wird hier häufig angewendet, um wie hier in diesem Beispiel jedem Item eine Breite von 25% geben zu können - minus dem Außenabstand von 0.5em. */
+  }
+}
+
+
+.projects__list__item a {
+  display: block;
+  padding: 4em;
+  color: black;
+  text-decoration: none;
+}
+
+.projects__list__item a:hover {
+  background: black;
+  color: white;
+}
+
+/* Buttons */
+
+a.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: black;
+  color: white;
+  text-decoration: none;
+  border: 2px solid black;
+  border-radius: 0.4em;
+}
+
+a.button:hover {
+  background: white;
+  color: black;
+}
+a.link {
+  color: #000;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+a.link:hover {
+  color: #666;
+  text-decoration: underline;
+
+}
+
+/* Slideshow */
+
+.slideshow img {
+  display: block;
+  width: 100%;
+}
+
+.carousel-cell {
+  width: 100%;
+}
+
+
+/* Media Queries können am Ende eines CSS-Files stehen, oder aber auch dazwischen. Die Position ist egal. Hauptsache, es kann leicht nachvollzogen werden, was im Code passiert. */
+
+/* Was passiert ab 720px */
+
+@media only screen and (min-width: 720px) {
+  ...
+}
+
+/* Was passiert ab 980px */
+
+@media only screen and (min-width: 980px) {
+  ...
+}
